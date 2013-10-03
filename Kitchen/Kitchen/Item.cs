@@ -7,39 +7,28 @@ using System.Threading.Tasks;
 namespace Kitchen
 {
     public class Item
-    {
-        private String Name;
-
-        private String Code;
-
-        private int Quantity;
-
-        public Item(String name, String code,int quantity)
+    {   
+        public Item(string name, string code,decimal quantity,UnitOfMesurement type)
         {
             this.Name = name;
             this.Code = code;
             this.Quantity = quantity;
+            this.Type = type;
         }
-        public String name
-        {
-            get
-            {
-                return Name;
-            }
-        }
-        public String code
-        {
-            get
-            {
-                return Code;
-            }
-        }
-        public int quantity
-        {
-            get
-            {
-                return Quantity;
-            }
-        }
+
+        public string Name { get; set; }
+
+        public string Code { get; private set; }
+
+        public decimal Quantity { get; set; }
+
+        public UnitOfMesurement Type { get; private set; }
+    }
+
+    public enum UnitOfMesurement
+    {
+        Kgs = 1,
+        Ltrs,
+        Dozen
     }
 }

@@ -13,8 +13,6 @@ namespace Client
         {
             ItemStock stock = new ItemStock();
             bool bl = true;
-            String addname, addcode;
-            int addquantity;
             while (bl)
             {
                 Console.WriteLine("\n This is a menu for user:");
@@ -23,20 +21,11 @@ namespace Client
                 switch (check)
                 {
                     case 1:
-                        Console.WriteLine("Enter the name of the item: ");
-                        addname = Console.ReadLine();
-                        Console.WriteLine("Enter the code of the item: ");
-                        addcode = Console.ReadLine();
-                        Console.WriteLine("Enter the quantity of the item: ");
-                        addquantity = int.Parse(Console.ReadLine());
-                        stock.AddItem(addname, addcode,addquantity);
+                        stock.AddItem();
                         break;
 
                     case 2:
-                        Console.WriteLine("Enter the code of item: ");
-                        String updatecode = Console.ReadLine();
-                        Console.WriteLine("Enter the quantity consumed : ");
-                        String consumed = Console.ReadLine();
+                        stock.UpdateItem();
                         break;
 
                     case 3:
