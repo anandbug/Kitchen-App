@@ -36,13 +36,11 @@ namespace Kitchen
             }
             else
             {
-                overflow+=new ChangedEventHandler(onChanged);
-                overflow();
+                if (this.overflow != null)
+                {
+                    this.overflow();
+                }
             }
-        }
-        protected void onChanged()
-        {
-            Console.WriteLine("\n****No sufficient stock left of the item****");
         }
     }
 }

@@ -47,7 +47,13 @@ namespace Kitchen
         public void UpdateItem()
         {
             ItemConsumption consume=new ItemConsumption();
+            consume.overflow += consume_overflow;
             consume.UpdateItem(list);
+        }
+
+        void consume_overflow()
+        {
+            Console.WriteLine("Out of stock :\n");
         }
 
         public void display()
